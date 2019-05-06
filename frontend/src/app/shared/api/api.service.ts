@@ -17,7 +17,7 @@ export class ApiService {
   constructor(private httpClient: HttpClient) {}
 
   public getJokes() {
-    return this.httpClient.get(this.jokeUrl).pipe(map((res: any) => {
+    return this.httpClient.get(this.jokeUrlBackup).pipe(map((res: any) => {
       if (res && res.type === 'success') {
         return res.value;
       }
@@ -26,7 +26,7 @@ export class ApiService {
   }
 
   public getRandomJoke() {
-    return this.httpClient.get(this.randomJokeUrl).pipe(map((res: any) => {
+    return this.httpClient.get(this.randomJokeUrlBackup).pipe(map((res: any) => {
       if (res && res.type === 'success') {
         return res.value;
       }

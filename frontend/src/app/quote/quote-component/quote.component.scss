@@ -33,7 +33,7 @@
 .chuck-quote-container {
     flex: 1;
     .chuck {
-        background-image: url("/assets/chuck-transparent-0.png");
+        background-image: url("~/assets/chuck-transparent-0.png");
         background-repeat: no-repeat;
         background-position: center bottom;
         background-size: contain;
@@ -41,13 +41,13 @@
         height: 100%;
         display: block;
         &.chuck-1 {
-            background-image: url("/assets/chuck-transparent-1.png");
+            background-image: url("~/assets/chuck-transparent-1.png");
         }
         &.chuck-2 {
-            background-image: url("/assets/chuck-transparent-2.png");
+            background-image: url("~/assets/chuck-transparent-2.png");
         }
         &.chuck-3 {
-            background-image: url("/assets/chuck-transparent-3.png");
+            background-image: url("~/assets/chuck-transparent-3.png");
         }
     }
 }
