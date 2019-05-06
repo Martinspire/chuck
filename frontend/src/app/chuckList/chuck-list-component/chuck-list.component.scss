@@ -1,0 +1,154 @@
+.mat-display-1 {
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+    color: #fff;
+    text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.container {
+    max-width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    bottom: 64px;
+    top: 0;
+    left: 10%;
+    right: 10%;
+}
+
+.scrollable-content {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.joke-container,
+.favorites-container {
+    overflow-y: auto;
+    height: calc(100vh - 210px); // top title, menu bar below, tabbar below and some additional margin to keep it safe
+    padding-right: 10px;
+}
+
+.joke {
+    margin: 15px 0;
+    display: flex;
+    flex-direction: row;
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    .index {
+        width: 30px;
+        text-align: center;
+    }
+    .text {
+        display: flex;
+        flex: 1;
+    }
+    .genre {
+        display: inline;
+        span {
+            font-size: 0.7em;
+            border: 1px solid #f00;
+            border-radius: 5px;
+            background-color: #fcc;
+            padding: 2px;
+        }
+    }
+    .favorite {
+        width: 30px;
+        text-align: center;
+        cursor: pointer;
+        user-select: none;
+    }
+}
+
+.jokes-container {
+    flex: 1;
+}
+
+.chuck-container {
+    flex: 1;
+}
+
+
+/* Override material styling so we have it wide and better fitting to our usecase */
+
+.container .jokes-container .mat-tab-group .mat-tab-label-container {
+    margin-right: 10px;
+}
+
+.mat-tab-label {
+    width: 50%;
+    background-color: #fff;
+    border-radius: 8px;
+    margin: 10px;
+}
+
+.mat-tab-label.mat-tab-label-active {
+    opacity: 1;
+}
+
+.chuck {
+    background-image: url("/assets/chuck-transparent-0.png");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+    display: block;
+    &.chuck-1 {
+        background-image: url("/assets/chuck-transparent-1.png");
+    }
+    &.chuck-2 {
+        background-image: url("/assets/chuck-transparent-2.png");
+    }
+    &.chuck-3 {
+        background-image: url("/assets/chuck-transparent-3.png");
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .container {
+        max-width: 100%;
+        padding: 0;
+        left: 0;
+        right: 0;
+    }
+    .jokes-container {
+        max-width: 100%;
+    }
+    .mat-display-1 {
+        font-size: 1.5em;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        bottom: 56px;
+    }
+    .jokes-container {
+        z-index: 2;
+    }
+    .joke-container,
+    .favorites-container {
+        padding: 10px;
+    }
+    .joke {
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+    .chuck-container {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        top: 0;
+        z-index: 1;
+    }
+    .mat-display-1 {
+        font-size: 1em;
+        padding: 8px;
+    }
+}

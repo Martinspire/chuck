@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="quote-container">
+        <div class="quote" *ngIf="joke">
+            <div class="text" [innerHTML]="getSafeJoke(joke.joke)"></div>
+        </div>
+    </div>
+    <div class="chuck-quote-container">
+        <div class="chuck" [ngClass]="'chuck-' + getRandomBackground()"></div>
+    </div>
+</div>

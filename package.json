@@ -1,0 +1,19 @@
+{
+    "name": "martin-spierings-frontmen-assignment",
+    "version": "1.0.0",
+    "description": "Simple Chuck Norris joke generator - use this to run backand en frontend",
+    "main": "index.js",
+    "scripts": {
+        "backend": "node backend/index.js",
+        "frontend": "npm run --prefix frontend start",
+        "start": "npm run backend & npm run frontend",
+        "backendinstall": "cd backend && npm install",
+        "frontendinstall": "cd frontend && npm install",
+        "startinstall": "npm run backendinstall & npm run frontendinstall"
+    },
+    "keywords": [
+        "chuck"
+    ],
+    "author": "martin spierings",
+    "license": "ISC"
+}

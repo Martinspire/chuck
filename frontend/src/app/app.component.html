@@ -1,0 +1,10 @@
+<div class="page-container" [ngClass]="'texas-' + getRandomBackground()">
+    <div class="page" [@routeAnimation]="getAnimationData(routerOutlet)">
+        <router-outlet #routerOutlet="outlet"></router-outlet>
+    </div>
+
+    <mat-toolbar class="toolbar">
+        <a class="chucklist-button" mat-raised-button color="primary" routerLink="/chucklist" routerLinkActive="mat-accent" (click)="refreshJokes()">Get 10 lines</a>
+        <a class="quote-button" mat-raised-button color="primary" routerLink="/quote" routerLinkActive="mat-accent" (click)="refreshQuote()">Get a quote</a>
+    </mat-toolbar>
+</div>

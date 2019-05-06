@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="jokes-container">
+        <h1 class="mat-display-1">
+            Your Chuck Norris Jokes of the day
+        </h1>
+        <mat-tab-group headerPosition="below">
+            <mat-tab label="Jokes">
+                <div class="scrollable-content">
+                    <div class="joke-container">
+                        <div class="joke" *ngFor="let j of jokes; index as i">
+                            <div class="index">{{i + 1}}.</div>
+                            <div class="text" [innerHTML]="getSafeJoke(j.joke)"></div>
+                            <div class="genre"><span *ngFor="let c of j.categories">{{c}}</span></div>
+                            <div class="favorite" (click)="setFavorite(j)"><i class="material-icons">{{j.favorite ? 'favorite' : 'favorite_border'}}</i></div>
+                        </div>
+                    </div>
+                </div>
+            </mat-tab>
+            <mat-tab label="Favorites">
+                <div class="scrollable-content">
+                    <div class="favorites-container">
+                        <div class="joke" *ngFor="let f of favoriteJokes; index as i">
+                            <div class="index">{{i + 1}}.</div>
+                            <div class="text" [innerHTML]="getSafeJoke(f.joke)"></div>
+                            <div class="genre"><span *ngFor="let c of f.categories">{{c}}</span></div>
+                            <div class="favorite" (click)="setFavorite(f)"><i class="material-icons">{{f.favorite ? 'favorite' : 'favorite_border'}}</i></div>
+                        </div>
+                        <button mat-raised-button (click)="fillFavorites()" color="primary" *ngIf="favoriteJokes.length < 10">Fill favorites</button>
+                    </div>
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+    <div class="chuck-container">
+        <div class="chuck" [ngClass]="'chuck-' + getRandomBackground()"></div>
+    </div>
+</div>
