@@ -34,7 +34,7 @@
         "express-winston": "^3.0.0",
         "fs": "0.0.1-security",
         "helmet": "^3.10.0",
-        "lodash": "^4.17.11",
+        "lodash": "^4.17.19",
         "longjohn": "^0.2.12",
         "mongoose": "^5.7.5",
         "morgan": "^1.9.0",
